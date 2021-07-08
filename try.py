@@ -31,10 +31,17 @@ for i in range(len(new)-1):
     driver.get("https://www.tiktok.com/login/phone-or-email/email")
     username = driver.find_element_by_xpath('//*[@id="root"]/div/div[1]/form/div[2]/div/input')
     password = driver.find_element_by_xpath('//*[@id="root"]/div/div[1]/form/div[3]/div/input')
-    username.send_keys("test")
-    password.send_keys(new[i])
+    if username.get_attribute("value") != '':
+
+    
+        password.send_keys(new[i])
+    else:
+        username.send_keys("test")
+        password.send_keys(new[i])
+    
     submit_button = driver.find_elements_by_xpath('//*[@id="root"]/div/div[1]/form/button')[0]
     submit_button.click()
+    
     time.sleep(1)
     
 
