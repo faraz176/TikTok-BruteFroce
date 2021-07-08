@@ -2,6 +2,7 @@
 import random
 from selenium import webdriver
 import time
+import requests as r 
 
 
 #Initializing the driver
